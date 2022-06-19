@@ -1,0 +1,11 @@
+{
+  "itemGroup.whizzy_wands.wands": "Whizzy Wands",
+
+  "item.whizzy_wands.wand_core": "Whizzy Wand Core",
+
+  "item.whizzy_wands.launch_wand": "Whizzy Wand of Launching",
+  "item.whizzy_wands.launch_wand.tooltip_1": "§7Hold right click to launch forward and up.",
+
+  "item.whizzy_wands.rocket_wand": "Whizzy Wand of Rocketing",
+  "item.whizzy_wands.rocket_wand.tooltip_1": "§7Right click to launch backwards."
+}
