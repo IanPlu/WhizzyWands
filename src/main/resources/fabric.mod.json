@@ -15,6 +15,9 @@
   "entrypoints": {
     "main": [
       "ianplu.whizzy_wands.WhizzyWands"
+    ],
+    "client": [
+      "ianplu.whizzy_wands.client.WhizzyWandsClient"
     ]
   },
   "mixins": [

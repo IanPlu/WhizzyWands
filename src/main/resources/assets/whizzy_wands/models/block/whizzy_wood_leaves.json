@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "whizzy_wands:block/whizzy_wood_leaves"
+  }
+}

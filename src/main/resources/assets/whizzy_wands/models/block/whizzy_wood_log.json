@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "whizzy_wands:block/whizzy_wood_log_face",
+    "side": "whizzy_wands:block/whizzy_wood_log_side"
+  }
+}
