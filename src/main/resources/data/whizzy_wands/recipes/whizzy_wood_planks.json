@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "whizzy_wands:whizzy_wood_log"
+    }
+  ],
+  "result": {
+    "item": "whizzy_wands:whizzy_wood_planks",
+    "count": 4
+  }
+}

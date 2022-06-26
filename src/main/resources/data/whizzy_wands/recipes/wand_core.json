@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "RRD",
+    " RD",
     "RSR",
-    "SRR"
+    "SR "
   ],
   "key": {
     "R": {
       "item": "minecraft:redstone"
     },
     "S": {
-      "item": "minecraft:stick"
+      "item": "whizzy_wands:whizzy_wood_log"
     },
     "D": {
       "item": "minecraft:diamond"
