@@ -42,13 +42,16 @@ public class ItemRocketWand extends Item {
         world.playSound(null, caster.getX(), caster.getY(), caster.getZ(), SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.PLAYERS, 0.5F, 2.0F);
         world.addParticle(ParticleTypes.EXPLOSION, caster.getX(), caster.getY(), caster.getZ(), 1.0, 0.0, 0.0);
 
-        float launchStrength = -2.5f;
+        float launchStrength = -3.0f;
         float halfPi = (float)Math.PI / 180;
-        caster.addVelocity(
-                -MathHelper.sin(caster.getYaw() * halfPi) * MathHelper.cos(caster.getPitch() * halfPi) * launchStrength,
-                -MathHelper.sin((caster.getPitch() + caster.getPitch()) * halfPi) * launchStrength * 0.9f,
-                MathHelper.cos(caster.getYaw() * halfPi) * MathHelper.cos(caster.getPitch() * halfPi) * launchStrength
-        );
+
+        double x = -MathHelper.sin(caster.getYaw() * halfPi) * MathHelper.cos(caster.getPitch() * halfPi) * launchStrength;
+        double y = -MathHelper.sin(caster.getPitch() * halfPi) * launchStrength * 0.9f;
+        double z = MathHelper.cos(caster.getYaw() * halfPi) * MathHelper.cos(caster.getPitch() * halfPi) * launchStrength;
+
+        WhizzyWands.LOGGER.info("Rocket Wand launch parameters: (%f, %f, %f)".formatted(x, y, z));
+
+        caster.addVelocity(x, y, z);
 
         stack.damage(1, caster, (p) -> {
             p.sendToolBreakStatus(caster.getActiveHand());

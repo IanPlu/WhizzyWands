@@ -43,17 +43,18 @@ public class ItemLaunchWand extends Item {
 
     @Override
     public int getMaxUseTime(ItemStack stack) {
-        return 36000;
+        return 72000;
     }
 
     public static float getPullProgress(int useTicks) {
         // Copied shamelessly from BowItem, who knows what this is doing
-        float f= (float)useTicks / 20.0F;
+        float f = ((float) useTicks) / 20.0F;
         f = (f * f * f * 2.0F) / 3.0F;
         if (f > 1.0F) {
             f = 1.0F;
         }
 
+        WhizzyWands.LOGGER.info("Pull progress: %f".formatted(f));
         return f;
     }
 
@@ -63,9 +64,9 @@ public class ItemLaunchWand extends Item {
             float pullProgress = getPullProgress(this.getMaxUseTime(stack) - remainingUseTicks);
 
             world.playSound(null, caster.getX(), caster.getY(), caster.getZ(), SoundEvents.BLOCK_AMETHYST_BLOCK_BREAK, SoundCategory.PLAYERS, pullProgress, 1.0F);
-            world.addParticle(ParticleTypes.GLOW, caster.getX(), caster.getY(), caster.getZ(), 1.0, 0.0, 0.0);
+            world.addParticle(ParticleTypes.GLOW, caster.getX(), caster.getY(), caster.getZ(), 0.0, -1.0, 0.0);
 
-            float launchStrength = 1.2f * pullProgress;
+            float launchStrength = 1.1f * pullProgress;
             float halfPi = (float)Math.PI / 180;
             caster.addVelocity(
                     -MathHelper.sin(caster.getYaw() * halfPi) * MathHelper.cos(caster.getPitch() * halfPi) * launchStrength * 2.3f,

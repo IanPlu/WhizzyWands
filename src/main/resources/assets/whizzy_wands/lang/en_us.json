@@ -8,7 +8,11 @@
 
   "item.whizzy_wands.wand_core": "Whizziwood Wand Core",
   "item.whizzy_wands.launch_wand": "Whizzy Wand of Launching",
-  "item.whizzy_wands.launch_wand.tooltip_1": "§7Hold right click to launch forward and up.",
+  "item.whizzy_wands.launch_wand.tooltip_1": "§7Hold to launch forward and up.",
   "item.whizzy_wands.rocket_wand": "Whizzy Wand of Rocketing",
-  "item.whizzy_wands.rocket_wand.tooltip_1": "§7Right click to launch backwards."
+  "item.whizzy_wands.rocket_wand.tooltip_1": "§7Use to launch backwards.",
+  "item.whizzy_wands.grapple_wand": "Whizzy Wand of Grappling",
+  "item.whizzy_wands.grapple_wand.tooltip_1": "§7Hold to pull yourself to the targeted block.",
+  "item.whizzy_wands.lightning_wand": "Whizzy Wand of Lightning",
+  "item.whizzy_wands.lightning_wand.tooltip_1": "§7Hold to call down a lightning bolt."
 }

@@ -6,7 +6,9 @@ import ianplu.whizzy_wands.block.WhizzyWoodLog;
 import ianplu.whizzy_wands.block.WhizzyWoodPlanks;
 import ianplu.whizzy_wands.block.WhizzyWoodSapling;
 import ianplu.whizzy_wands.feature.WhizzyWoodSaplingGenerator;
+import ianplu.whizzy_wands.item.ItemGrappleWand;
 import ianplu.whizzy_wands.item.ItemLaunchWand;
+import ianplu.whizzy_wands.item.ItemLightningWand;
 import ianplu.whizzy_wands.item.ItemRocketWand;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.Block;
@@ -19,6 +21,8 @@ public class Content {
 
     public static Item LAUNCH_WAND;
     public static Item ROCKET_WAND;
+    public static Item GRAPPLE_WAND;
+    public static Item LIGHTNING_WAND;
 
     public static Block WHIZZY_WOOD_LOG;
     public static Block WHIZZY_WOOD_LEAVES;
@@ -38,6 +42,8 @@ public class Content {
         // Item
         LAUNCH_WAND = new ItemLaunchWand(new FabricItemSettings());
         ROCKET_WAND = new ItemRocketWand(new FabricItemSettings());
+        GRAPPLE_WAND = new ItemGrappleWand(new FabricItemSettings());
+        LIGHTNING_WAND = new ItemLightningWand(new FabricItemSettings());
 
         // Block
         WHIZZY_WOOD_LOG = new WhizzyWoodLog();

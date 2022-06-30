@@ -20,9 +20,13 @@ import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.feature.PlacedFeatures;
 import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 import net.minecraft.world.gen.placementmodifier.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class WhizzyWands implements ModInitializer {
     static final String NAMESPACE = "whizzy_wands";
+
+    public static final Logger LOGGER = LogManager.getLogger(NAMESPACE);
 
     public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier("whizzy_wands", "wands"))
             .icon(() -> new ItemStack(Content.LAUNCH_WAND))
@@ -48,6 +52,8 @@ public class WhizzyWands implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier(NAMESPACE, "wand_core"), Content.WAND_CORE);
         Registry.register(Registry.ITEM, new Identifier(NAMESPACE, "launch_wand"), Content.LAUNCH_WAND);
         Registry.register(Registry.ITEM, new Identifier(NAMESPACE, "rocket_wand"), Content.ROCKET_WAND);
+        Registry.register(Registry.ITEM, new Identifier(NAMESPACE, "grapple_wand"), Content.GRAPPLE_WAND);
+        Registry.register(Registry.ITEM, new Identifier(NAMESPACE, "lightning_wand"), Content.LIGHTNING_WAND);
 
         // Features
         RegistryEntry<PlacedFeature> whizziwoodTree = PlacedFeatures.register(
