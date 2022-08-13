@@ -1,6 +1,7 @@
 package ianplu.whizzy_wands.item;
 
 import ianplu.whizzy_wands.WhizzyWands;
+import ianplu.whizzy_wands.config.WhizzyWandsConfig;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.AreaEffectCloudEntity;
 import net.minecraft.entity.EntityType;
@@ -34,7 +35,7 @@ public class ItemLightningWand extends Item {
                 .group(WhizzyWands.ITEM_GROUP)
                 .maxCount(1)
                 .fireproof()
-                .maxDamageIfAbsent(256)
+                .maxDamageIfAbsent(WhizzyWandsConfig.lightning_wand_durability)
                 .rarity(Rarity.UNCOMMON)
         );
     }

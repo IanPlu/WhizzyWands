@@ -1,6 +1,7 @@
 package ianplu.whizzy_wands.item;
 
 import ianplu.whizzy_wands.WhizzyWands;
+import ianplu.whizzy_wands.config.WhizzyWandsConfig;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -24,7 +25,7 @@ public class ItemRocketWand extends Item {
                 .group(WhizzyWands.ITEM_GROUP)
                 .maxCount(1)
                 .fireproof()
-                .maxDamageIfAbsent(256)
+                .maxDamageIfAbsent(WhizzyWandsConfig.rocket_wand_durability)
                 .rarity(Rarity.UNCOMMON)
         );
     }
@@ -44,7 +45,7 @@ public class ItemRocketWand extends Item {
 
         caster.getItemCooldownManager().set(this, 5);
 
-        float launchStrength = -3.0f;
+        float launchStrength = -3.0f * WhizzyWandsConfig.rocket_wand_scalar;
         float halfPi = (float)Math.PI / 180;
 
         double x = -MathHelper.sin(caster.getYaw() * halfPi) * MathHelper.cos(caster.getPitch() * halfPi) * launchStrength;

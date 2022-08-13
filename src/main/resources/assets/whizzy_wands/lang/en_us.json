@@ -18,5 +18,12 @@
   "item.whizzy_wands.grapple_wand": "Whizzy Wand of Grappling",
   "item.whizzy_wands.grapple_wand.tooltip_1": "§7Hold to pull yourself to the targeted block.",
   "item.whizzy_wands.lightning_wand": "Whizzy Wand of Lightning",
-  "item.whizzy_wands.lightning_wand.tooltip_1": "§7Hold to call down a lightning bolt."
+  "item.whizzy_wands.lightning_wand.tooltip_1": "§7Hold to call down a lightning bolt.",
+
+  "whizzy_wands.midnightconfig.title": "Whizzy Wands",
+  "whizzy_wands.midnightconfig.launch_wand_scalar_comment": "The Launch Wand's launch strength, with 1.0F being default.",
+  "whizzy_wands.midnightconfig.launch_wand_durability_comment": "Default durability for the Launch Wand.",
+  "whizzy_wands.midnightconfig.rocket_wand_scalar_comment": "The Rocket Wand's launch strength, with 1.0F being default.",
+  "whizzy_wands.midnightconfig.rocket_wand_durability_comment": "Default durability for the Rocket Wand.",
+  "whizzy_wands.midnightconfig.lightning_wand_durability_comment": "Default durability for the Lightning Wand."
 }

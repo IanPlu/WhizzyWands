@@ -1,6 +1,7 @@
 package ianplu.whizzy_wands.item;
 
 import ianplu.whizzy_wands.WhizzyWands;
+import ianplu.whizzy_wands.config.WhizzyWandsConfig;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -26,7 +27,7 @@ public class ItemLaunchWand extends Item {
                 .group(WhizzyWands.ITEM_GROUP)
                 .maxCount(1)
                 .fireproof()
-                .maxDamageIfAbsent(256)
+                .maxDamageIfAbsent(WhizzyWandsConfig.launch_wand_durability)
                 .rarity(Rarity.UNCOMMON)
         );
     }
@@ -67,7 +68,7 @@ public class ItemLaunchWand extends Item {
             world.playSound(null, caster.getX(), caster.getY(), caster.getZ(), SoundEvents.BLOCK_AMETHYST_BLOCK_BREAK, SoundCategory.PLAYERS, pullProgress, 1.0F);
             world.addParticle(ParticleTypes.GLOW, caster.getX(), caster.getY(), caster.getZ(), 0.0, -1.0, 0.0);
 
-            float launchStrength = 1.1f * pullProgress;
+            float launchStrength = 1.1f * pullProgress * WhizzyWandsConfig.launch_wand_scalar;
             float halfPi = (float)Math.PI / 180;
             caster.addVelocity(
                     -MathHelper.sin(caster.getYaw() * halfPi) * MathHelper.cos(caster.getPitch() * halfPi) * launchStrength * 2.3f,

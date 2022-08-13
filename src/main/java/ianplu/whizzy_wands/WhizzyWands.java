@@ -1,5 +1,7 @@
 package ianplu.whizzy_wands;
 
+import ianplu.whizzy_wands.config.MidnightConfig;
+import ianplu.whizzy_wands.config.WhizzyWandsConfig;
 import ianplu.whizzy_wands.init.Content;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
@@ -35,6 +37,8 @@ public class WhizzyWands implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        MidnightConfig.init(NAMESPACE, WhizzyWandsConfig.class);
+
         Content.init();
 
         // Blocks
