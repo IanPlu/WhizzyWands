@@ -1,6 +1,7 @@
 package ianplu.whizzy_wands.item;
 
 import ianplu.whizzy_wands.WhizzyWands;
+import ianplu.whizzy_wands.entity.EntityGrappleWandHook;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -47,21 +48,15 @@ public class ItemGrappleWand extends Item {
 
         HitResult result = caster.raycast(MAX_GRAPPLE_DISTANCE, 1.0f, false);
 
-        Vec3d pos = result.getPos();
-        WhizzyWands.LOGGER.info("Raycast result: (%f, %f, %f) (%f away)".formatted(pos.getX(), pos.getY(), pos.getZ(), result.squaredDistanceTo(caster)));
+//        Vec3d pos = result.getPos();
+//        WhizzyWands.LOGGER.info("Raycast result: (%f, %f, %f) (%f away)".formatted(pos.getX(), pos.getY(), pos.getZ(), result.squaredDistanceTo(caster)));
 
-//        pos.
+        WhizzyWands.LOGGER.info("Firing grapple!");
+        EntityGrappleWandHook hook = new EntityGrappleWandHook(world, caster);
+        hook.setVelocity(caster, caster.getPitch(), caster.getYaw(), 0.0F, 2.5F, 0F);
+        world.spawnEntity(hook);
 
-//        float launchStrength = 2.5f;
-        float halfPi = (float)Math.PI / 180;
-
-//        double x = -MathHelper.sin(caster.getYaw() * halfPi) * MathHelper.cos(caster.getPitch() * halfPi) * launchStrength;
-//        double y = -MathHelper.sin(caster.getPitch() * halfPi) * launchStrength * 0.9f;
-//        double z = MathHelper.cos(caster.getYaw() * halfPi) * MathHelper.cos(caster.getPitch() * halfPi) * launchStrength;
-//
-//        WhizzyWands.LOGGER.info("Rocket Wand launch parameters: (%f, %f, %f)".formatted(x, y, z));
-//
-//        caster.addVelocity(x, y, z);
+        caster.getItemCooldownManager().set(this, 5);
 
         stack.damage(1, caster, (p) -> {
             p.sendToolBreakStatus(caster.getActiveHand());

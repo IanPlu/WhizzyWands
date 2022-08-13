@@ -54,12 +54,16 @@ public class ItemLightningWand extends Item {
         return 72000;
     }
 
-    public static float getPullProgress(int useTicks) {
+    public static float getPullTime(ItemStack stack) {
+        return 15.0F;
+    }
+
+    public static float getPullProgress(int useTicks, ItemStack stack) {
         // Copied shamelessly from BowItem, who knows what this is doing
-        float f = ((float) useTicks) / 20.0F;
+        float f = ((float) useTicks) / getPullTime(stack);
         f = (f * f * f * 2.0F) / 3.0F;
-        if (f > 0.5F) {
-            f = 0.5F;
+        if (f > 1.0F) {
+            f = 1.0F;
         }
         return f;
     }
@@ -67,12 +71,12 @@ public class ItemLightningWand extends Item {
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
         if (user instanceof PlayerEntity caster) {
-            float pullProgress = getPullProgress(this.getMaxUseTime(stack) - remainingUseTicks);
+            float pullProgress = getPullProgress(this.getMaxUseTime(stack) - remainingUseTicks, stack);
 
-            world.playSound(null, caster.getX(), caster.getY(), caster.getZ(), SoundEvents.BLOCK_AMETHYST_BLOCK_BREAK, SoundCategory.PLAYERS, pullProgress, 1.0F);
+            world.playSound(null, caster.getX(), caster.getY(), caster.getZ(), SoundEvents.ITEM_TRIDENT_THUNDER, SoundCategory.PLAYERS, 0.2F, 1.0F);
             world.addParticle(ParticleTypes.GLOW, caster.getX(), caster.getY(), caster.getZ(), 0.0, -1.0, 0.0);
 
-            if (pullProgress >= 0.5) {
+            if (pullProgress >= 1.0) {
                 HitResult result = caster.raycast(MAX_RANGE, 1.0f, false);
 
                 BlockPos blockPos = new BlockPos(result.getPos());

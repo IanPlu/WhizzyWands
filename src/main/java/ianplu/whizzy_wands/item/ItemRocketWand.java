@@ -42,14 +42,14 @@ public class ItemRocketWand extends Item {
         world.playSound(null, caster.getX(), caster.getY(), caster.getZ(), SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.PLAYERS, 0.5F, 2.0F);
         world.addParticle(ParticleTypes.EXPLOSION, caster.getX(), caster.getY(), caster.getZ(), 1.0, 0.0, 0.0);
 
+        caster.getItemCooldownManager().set(this, 5);
+
         float launchStrength = -3.0f;
         float halfPi = (float)Math.PI / 180;
 
         double x = -MathHelper.sin(caster.getYaw() * halfPi) * MathHelper.cos(caster.getPitch() * halfPi) * launchStrength;
         double y = -MathHelper.sin(caster.getPitch() * halfPi) * launchStrength * 0.9f;
         double z = MathHelper.cos(caster.getYaw() * halfPi) * MathHelper.cos(caster.getPitch() * halfPi) * launchStrength;
-
-        WhizzyWands.LOGGER.info("Rocket Wand launch parameters: (%f, %f, %f)".formatted(x, y, z));
 
         caster.addVelocity(x, y, z);
 

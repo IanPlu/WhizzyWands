@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  P",
+    " PP",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "whizzy_wands:whizzy_wood_planks"
+    }
+  },
+  "result": {
+    "item": "whizzy_wands:whizzy_wood_stairs",
+    "count": 6
+  }
+}

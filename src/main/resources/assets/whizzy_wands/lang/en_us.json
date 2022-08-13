@@ -5,8 +5,12 @@
   "block.whizzy_wands.whizzy_wood_leaves": "Whizziwood Leaves",
   "block.whizzy_wands.whizzy_wood_sapling": "Whizziwood Sapling",
   "block.whizzy_wands.whizzy_wood_planks": "Whizziwood Planks",
+  "block.whizzy_wands.whizzy_wood_stairs": "Whizziwood Stairs",
+  "block.whizzy_wands.whizzy_wood_slab": "Whizziwood Slab",
 
   "item.whizzy_wands.wand_core": "Whizziwood Wand Core",
+  "item.whizzy_wands.grapple_wand_hook": "Grapple Wand Hook",
+
   "item.whizzy_wands.launch_wand": "Whizzy Wand of Launching",
   "item.whizzy_wands.launch_wand.tooltip_1": "§7Hold to launch forward and up.",
   "item.whizzy_wands.rocket_wand": "Whizzy Wand of Rocketing",
